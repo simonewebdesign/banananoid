@@ -1,4 +1,5 @@
 // Available globals:
+// - state
 // - Vector2
 // - keysDown
 
@@ -24,9 +25,6 @@ let framesCount = 0
 
 let then = Date.now()
 
-let x = 0,
-    y = 0
-
 // The main game loop
 const main = () => {
     raf(main)
@@ -38,15 +36,6 @@ const main = () => {
 
     if (delta > interval) {
         framesCount++
-
-        ctx.clearRect(0, 0, 300, 150) // clear screen
-
-        ctx.fillStyle = 'green'
-        ctx.fillRect(x++, y++, 20, 20)
-
-        ctx.fillStyle = 'Black'
-        ctx.font      = 'normal 16pt Arial'
-        ctx.fillText(`FPS: ${fps} #: ${framesCount}`, 10, 26)
 
         update(delta)
         render()
