@@ -25,5 +25,9 @@ module.exports = {
             "error",
             "never"
         ]
+    },
+    "globals": {
+        "state": false,
+        "Vector2": false,
     }
 };

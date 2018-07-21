@@ -1,4 +1,5 @@
 // Available globals:
+// - Vector2
 // - keysDown
 
 const update = () => {}
