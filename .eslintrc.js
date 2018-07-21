@@ -27,7 +27,7 @@ module.exports = {
         ]
     },
     "globals": {
-        "state": false,
+        "initialState": false,
         "Vector2": false,
     }
 };

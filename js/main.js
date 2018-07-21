@@ -1,13 +1,27 @@
 // Available globals:
-// - state
+// - initialState
 // - Vector2
 // - keysDown
 
-const update = () => {}
-const render = () => {}
-
 const canvas = document.getElementById('canvas')
 const ctx = canvas.getContext('2d')
+
+ctx.fillStyle = 'rgb(250, 250, 250)'
+ctx.font = '18px Helvetica'
+ctx.textAlign = 'left'
+ctx.textBaseline = 'top'
+
+const update = (state = initialState, delta) => {
+    return {
+        ...state,
+        x: state.x + 0.5,
+        y: state.y + 0.5,
+    }
+}
+const isStateChanged = () => true
+const render = state => {
+    ctx.fillText('hello world', state.x, state.y)
+}
 
 // Cross-browser support for requestAnimationFrame
 const win = window,
@@ -26,19 +40,21 @@ let framesCount = 0
 let then = Date.now()
 
 // The main game loop
-const main = () => {
-    raf(main)
-
+const main = state => {
     const now = Date.now()
     const delta = (now - then) / 1000
+
+    const newState = update(state, delta)
+
+    raf(main.bind(null, newState))
+
     const fps = getFps()
     const interval = 1 / fps
 
     if (delta > interval) {
         framesCount++
 
-        update(delta)
-        render()
+        render(newState)
 
         // Update time
         // now - (delta % interval) is an improvement over just
