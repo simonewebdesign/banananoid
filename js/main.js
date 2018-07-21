@@ -6,21 +6,16 @@
 const canvas = document.getElementById('canvas')
 const ctx = canvas.getContext('2d')
 
-ctx.fillStyle = 'rgb(250, 250, 250)'
-ctx.font = '18px Helvetica'
-ctx.textAlign = 'left'
-ctx.textBaseline = 'top'
-
 const update = (state = initialState, delta) => {
     return {
         ...state,
-        x: state.x + 0.5,
-        y: state.y + 0.5,
+        planePos: state.planePos.addSelf(new Vector2(1, 1)),
     }
 }
 const isStateChanged = () => true
 const render = state => {
-    ctx.fillText('hello world', state.x, state.y)
+    const { x, y } = state.planePos
+    ctx.fillRect(x, y, 60, 20)
 }
 
 // Cross-browser support for requestAnimationFrame
