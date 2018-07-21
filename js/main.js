@@ -1,8 +1,14 @@
 const update = (state = initialState, delta) => {
     return {
         ...state,
+        ballPos: updateBallPos(state, delta),
         planePos: updatePlanePos(state, delta),
+
     }
+}
+
+const updateBallPos = ({ ballPos }, delta) => {
+    return ballPos
 }
 
 const updatePlanePos = ({ planePos }, delta) => {
@@ -16,11 +22,14 @@ const updatePlanePos = ({ planePos }, delta) => {
 
 const render = state => {
     // Clear screen
-    ctx.fillStyle = ''
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
 
-    const { x, y } = state.planePos
-    ctx.fillRect(x, y, PLANE.width, PLANE.height)
+    const { ballPos, planePos } = state
+
+    ctx.fillRect(planePos.x, planePos.y, PLANE.width, PLANE.height)
+
+    ctx.arc(ballPos.x, ballPos.y, BALL.size, BALL.startAngle, BALL.endAngle, BALL.anticlockwise)
+    ctx.fill()
 }
 
 // Cross-browser support for requestAnimationFrame

@@ -27,11 +27,12 @@ module.exports = {
         ]
     },
     "globals": {
-        "keysDown": false,
-        "initialState": false,
-        "Vector2": false,
+        "BALL": false,
         "PLANE": false,
+        "Vector2": false,
         "canvas": false,
         "ctx": false,
+        "initialState": false,
+        "keysDown": false,
     }
 };
