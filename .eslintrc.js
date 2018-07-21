@@ -27,7 +27,11 @@ module.exports = {
         ]
     },
     "globals": {
+        "keysDown": false,
         "initialState": false,
         "Vector2": false,
+        "PLANE": false,
+        "canvas": false,
+        "ctx": false,
     }
 };

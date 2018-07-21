@@ -1,21 +1,26 @@
-// Available globals:
-// - initialState
-// - Vector2
-// - keysDown
-
-const canvas = document.getElementById('canvas')
-const ctx = canvas.getContext('2d')
-
 const update = (state = initialState, delta) => {
     return {
         ...state,
-        planePos: state.planePos.addSelf(new Vector2(1, 1)),
+        planePos: updatePlanePos(state, delta),
     }
 }
-const isStateChanged = () => true
+
+const updatePlanePos = ({ planePos }, delta) => {
+    if (keysDown['ArrowLeft']) {
+        return planePos.addSelf(new Vector2(-5, 0))
+    } else if (keysDown['ArrowRight']) {
+        return planePos.addSelf(new Vector2(5, 0))
+    }
+    return planePos
+}
+
 const render = state => {
+    // Clear screen
+    ctx.fillStyle = ''
+    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
+
     const { x, y } = state.planePos
-    ctx.fillRect(x, y, 60, 20)
+    ctx.fillRect(x, y, PLANE.width, PLANE.height)
 }
 
 // Cross-browser support for requestAnimationFrame
