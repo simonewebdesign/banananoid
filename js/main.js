@@ -1,3 +1,6 @@
+// Available globals:
+// - keysDown
+
 const update = () => {}
 const render = () => {}
 
