@@ -1,5 +1,5 @@
 - [x] Paddle collision detection against canvas
-- [ ] Start game using the spacebar
+- [x] Start game using the spacebar
 - [x] Ball movement
 - [x] Ball deflection against boundaries
 - [ ] Ball deflection against paddle

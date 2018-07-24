@@ -1,9 +1,11 @@
 const update = (state = initialState, delta) => {
+    const isGameStarted = !state.isGameStarted && keysDown[' '] ? true : state.isGameStarted
+
     return {
         ...state,
         ballPos: updateBallPos(state, delta),
         planePos: updatePlanePos(state, delta),
-
+        isGameStarted,
     }
 }
 
