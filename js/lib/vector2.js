@@ -9,10 +9,10 @@
 
 Vector2 = function ( x, y ) {
 
-    this.x = x || 0;
-    this.y = y || 0;
+    this.x = x || 0
+    this.y = y || 0
 
-};
+}
 
 Vector2.prototype = {
 
@@ -20,71 +20,71 @@ Vector2.prototype = {
 
     set: function ( x, y ) {
 
-        this.x = x;
-        this.y = y;
+        this.x = x
+        this.y = y
 
-        return this;
+        return this
 
     },
 
     copy: function ( v ) {
 
-        this.x = v.x;
-        this.y = v.y;
+        this.x = v.x
+        this.y = v.y
 
-        return this;
+        return this
 
     },
 
     clone: function () {
 
-        return new Vector2( this.x, this.y );
+        return new Vector2( this.x, this.y )
 
     },
 
 
     add: function ( v1, v2 ) {
 
-        this.x = v1.x + v2.x;
-        this.y = v1.y + v2.y;
+        this.x = v1.x + v2.x
+        this.y = v1.y + v2.y
 
-        return this;
+        return this
 
     },
 
     addSelf: function ( v ) {
 
-        this.x += v.x;
-        this.y += v.y;
+        this.x += v.x
+        this.y += v.y
 
-        return this;
+        return this
 
     },
 
     sub: function ( v1, v2 ) {
 
-        this.x = v1.x - v2.x;
-        this.y = v1.y - v2.y;
+        this.x = v1.x - v2.x
+        this.y = v1.y - v2.y
 
-        return this;
+        return this
 
     },
 
     subSelf: function ( v ) {
 
-        this.x -= v.x;
-        this.y -= v.y;
+        this.x -= v.x
+        this.y -= v.y
 
-        return this;
+        return this
 
     },
 
     multiplyScalar: function ( s ) {
 
-        this.x *= s;
-        this.y *= s;
+        this.x *= s
+        this.y *= s
 
-        return this;
+        return this
 
     },
 
@@ -92,73 +92,73 @@ Vector2.prototype = {
 
         if ( s ) {
 
-            this.x /= s;
-            this.y /= s;
+            this.x /= s
+            this.y /= s
 
         } else {
 
-            this.set( 0, 0 );
+            this.set( 0, 0 )
 
         }
 
-        return this;
+        return this
 
     },
 
 
     negate: function() {
 
-        return this.multiplyScalar( -1 );
+        return this.multiplyScalar( -1 )
 
     },
 
     dot: function ( v ) {
 
-        return this.x * v.x + this.y * v.y;
+        return this.x * v.x + this.y * v.y
 
     },
 
     lengthSq: function () {
 
-        return this.x * this.x + this.y * this.y;
+        return this.x * this.x + this.y * this.y
 
     },
 
     length: function () {
 
-        return Math.sqrt( this.lengthSq() );
+        return Math.sqrt( this.lengthSq() )
 
     },
 
     normalize: function () {
 
-        return this.divideScalar( this.length() );
+        return this.divideScalar( this.length() )
 
     },
 
     distanceTo: function ( v ) {
 
-        return Math.sqrt( this.distanceToSquared( v ) );
+        return Math.sqrt( this.distanceToSquared( v ) )
 
     },
 
     distanceToSquared: function ( v ) {
 
-        var dx = this.x - v.x, dy = this.y - v.y;
-        return dx * dx + dy * dy;
+        var dx = this.x - v.x, dy = this.y - v.y
+        return dx * dx + dy * dy
 
     },
 
 
     setLength: function ( l ) {
 
-        return this.normalize().multiplyScalar( l );
+        return this.normalize().multiplyScalar( l )
 
     },
 
     equals: function( v ) {
 
-        return ( ( v.x === this.x ) && ( v.y === this.y ) );
+        return ( ( v.x === this.x ) && ( v.y === this.y ) )
 
     },
 
@@ -172,38 +172,38 @@ Vector2.prototype = {
             rad = angle * to_radians,
             sin = Math.sin(rad),
             cos = Math.cos(rad),
-            px = x * cos - y * sin;
-            py = x * sin + y * cos;
+            px = x * cos - y * sin,
+            py = x * sin + y * cos
 
-        this.set( px, py );
+        this.set( px, py )
 
-        return this;
+        return this
 
     },
 
     rotateAroundPivot: function( pivot, angle ) {
 
-        return this.subSelf(pivot).rotate(angle).addSelf(pivot);
+        return this.subSelf(pivot).rotate(angle).addSelf(pivot)
 
     },
 
     // Returns the angle that the vector points to.
     angle: function () {
 
-        return Math.atan2( this.x, this.y );
+        return Math.atan2( this.x, this.y )
 
     },
 
     flipLeft: function () {
 
-        return this.set(this.x * -1, this.y);
+        return this.set(this.x * -1, this.y)
 
     },
 
     flipRight: function () {
 
-        return this.set(this.x, this.y * -1);
+        return this.set(this.x, this.y * -1)
 
     },
 
-};
+}
