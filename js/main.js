@@ -8,6 +8,27 @@ const update = (state = initialState, delta) => {
 }
 
 const updateBallPos = ({ ballPos, ballVelocity }, delta) => {
+    const isOutOfBoundsTop = ballPos.y <= 0
+    const isOutOfBoundsLeft = ballPos.x <= 0
+    const isOutOfBoundsRight = ballPos.x >= ctx.canvas.width
+    const isOutOfBoundsBottom = ballPos.y >= ctx.canvas.height
+
+    if (isOutOfBoundsTop) {
+        const newVelocity = ballVelocity.multiplySelf(new Vector2(1, -1))
+        return ballPos.addSelf(newVelocity)
+    }
+    if (isOutOfBoundsLeft) {
+        const newVelocity = ballVelocity.multiplySelf(new Vector2(-1, 1))
+        return ballPos.addSelf(newVelocity)
+    }
+    if (isOutOfBoundsRight) {
+        const newVelocity = ballVelocity.multiplySelf(new Vector2(-1, 1))
+        return ballPos.addSelf(newVelocity)
+    }
+    if (isOutOfBoundsBottom) {
+        const newVelocity = ballVelocity.multiplySelf(new Vector2(1, -1))
+        return ballPos.addSelf(newVelocity)
+    }
     return ballPos.addSelf(ballVelocity)
 }
 
