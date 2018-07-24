@@ -79,6 +79,15 @@ Vector2.prototype = {
 
     },
 
+    multiplySelf: function ( v ) {
+
+        this.x *= v.x
+        this.y *= v.y
+
+        return this
+
+    },
+
     multiplyScalar: function ( s ) {
 
         this.x *= s
