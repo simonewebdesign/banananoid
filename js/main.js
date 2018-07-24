@@ -7,8 +7,8 @@ const update = (state = initialState, delta) => {
     }
 }
 
-const updateBallPos = ({ ballPos }, delta) => {
-    return ballPos
+const updateBallPos = ({ ballPos, ballVelocity }, delta) => {
+    return ballPos.addSelf(ballVelocity)
 }
 
 const updatePlanePos = ({ planePos }, delta) => {

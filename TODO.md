@@ -1,6 +1,6 @@
 - [x] Paddle collision detection against canvas
 - [ ] Start game using the spacebar
-- [ ] Ball movement
+- [x] Ball movement
 - [ ] Ball deflection against paddle
 - [ ] Ball going down resets game
 - [ ] Bricks representation in status
