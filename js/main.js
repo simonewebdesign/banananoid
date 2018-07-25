@@ -1,3 +1,17 @@
+/*
+* R = 2*(V dot N)*N - V
+* V: velocity vector
+* N: a normalized vector of the plane surface (e.g. paddle or wall)
+* return: the new velocity vector
+* TODO: For more realism, you can multiply velT and velN by constants
+* representing friction and restitution, respectively.
+*/
+const deflect = (N, V) => {
+    const dot = V.dot(N)
+    const v1 = N.multiplyScalar(2 * dot)
+    return v1.subSelf(V)
+}
+
 const update = (state = initialState, delta) => {
     const isGameStarted = !state.isGameStarted && keysDown[' '] ? true : state.isGameStarted
 
@@ -53,6 +67,7 @@ const render = state => {
 
     ctx.fillRect(planePos.x, planePos.y, PLANE.width, PLANE.height)
 
+    ctx.beginPath()
     ctx.arc(ballPos.x, ballPos.y, BALL.size, BALL.startAngle, BALL.endAngle, BALL.anticlockwise)
     ctx.fill()
 }
