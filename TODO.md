@@ -2,7 +2,7 @@
 - [x] Start game using the spacebar
 - [x] Ball movement
 - [x] Ball deflection against boundaries
-- [ ] Ball deflection against paddle
+- [x] Ball deflection against paddle
 - [ ] Ball going down resets game
 - [ ] Bricks representation in status
 - [ ] Bricks rendering
