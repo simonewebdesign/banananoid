@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  FPS: <input type="range" id="fps" name="fps" min="0" max="60" step="5" />
+  FPS: <input type="range" id="fps" name="fps" min="0" max="60" step="5" value="60" />
 
   <canvas id="canvas" width="270" height="480"></canvas>
 
@@ -15,6 +15,14 @@
   <script src="js/constants.js"></script>
   <script src="js/keyboardEvents.js"></script>
   <script src="js/initialState.js"></script>
+  <script src="js/deflect.js"></script>
+  <script src="js/updateBallPosAndVelocity.js"></script>
+  <script src="js/updatePlanePos.js"></script>
+  <script src="js/update.js"></script>
+  <script src="js/render.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    main()
+  </script>
 </body>
 </html>
