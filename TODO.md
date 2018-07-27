@@ -3,7 +3,7 @@
 - [x] Ball movement
 - [x] Ball deflection against boundaries
 - [x] Ball deflection against paddle
-- [ ] Ball going down resets game
+- [x] Ball going down resets game
 - [ ] Bricks representation in status
 - [ ] Bricks rendering
 - [ ] Bricks deflection

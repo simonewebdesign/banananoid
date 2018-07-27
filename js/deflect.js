@@ -7,7 +7,7 @@
 * representing friction and restitution, respectively.
 */
 const deflect = (N, V) => {
-    const dot = V.dot(N)
-    const v1 = N.multiplyScalar(2 * dot)
-    return v1.subSelf(V)
+    const dotProduct = dot(V, N)
+    const v1 = multiplyScalar(N, 2 * dotProduct)
+    return sub(v1, V)
 }

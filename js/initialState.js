@@ -15,3 +15,7 @@ const initialState = {
 
     planePos: new Vector2(PLANE.x, PLANE.y),
 }
+
+Object.freeze(initialState)
+
+const gameState = JSON.parse(JSON.stringify(initialState))
