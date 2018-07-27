@@ -8,6 +8,8 @@
 <body>
   FPS: <input type="range" id="fps" name="fps" min="0" max="60" step="5" value="60" />
 
+  <button id="toggle-fullscreen">Fullscreen</button>
+
   <canvas id="canvas" width="270" height="480"></canvas>
 
   <script src="js/lib/vector2.js"></script>
@@ -22,7 +24,19 @@
   <script src="js/render.js"></script>
   <script src="js/main.js"></script>
   <script>
-    main()
+
+main()
+
+document.getElementById('toggle-fullscreen').addEventListener('click', () => {
+    if (canvas.webkitRequestFullscreen) {
+        canvas.webkitRequestFullscreen()
+    } else if (canvas.mozRequestFullscreen) {
+        canvas.mozRequestFullscreen()
+    } else if (canvas.requestFullscreen) {
+        canvas.requestFullscreen()
+    }
+})
+
   </script>
 </body>
 </html>
