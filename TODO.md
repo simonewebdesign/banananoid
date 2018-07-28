@@ -5,7 +5,7 @@
 - [x] Ball deflection against paddle
 - [x] Ball going down resets game
 - [x] Bricks representation in status
-- [ ] Bricks rendering
+- [x] Bricks rendering
 - [ ] Bricks deflection
 - [ ] Bricks update score
 - [ ] Render score

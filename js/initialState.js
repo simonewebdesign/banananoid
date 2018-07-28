@@ -1,11 +1,8 @@
 const initialBallVelocityX = Math.random() > 0.5 ? 1 : -1
 
-const numberOfRows = 3
-const numberOfItemsPerRow = 6
-
 const bricks =
     Array(numberOfRows)
-        .fill(Array(numberOfItemsPerRow))
+        .fill(Array(numberOfBricksPerRow))
         .map(a => a.fill(true))
 
 const initialState = {

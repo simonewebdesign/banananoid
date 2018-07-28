@@ -18,3 +18,21 @@ const PLANE = {
     x: canvas.width / 2 - planeWidth / 2,
     y: canvas.height - 30,
 }
+
+const numberOfRows = 3
+const numberOfBricksPerRow = 9
+const BRICK = {
+    width: canvas.width / numberOfBricksPerRow,
+    height: 20,
+    colors: [
+        '#f00',
+        '#0f0',
+        '#00f',
+        '#ff0',
+        '#0ff',
+        '#f0f',
+    ],
+    yOffset: 50,
+}
+const numberOfColors = BRICK.colors.length
+const canvasYToClearFrom = BRICK.height * numberOfRows + BRICK.yOffset
